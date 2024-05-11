@@ -2,32 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%; /* #ffffff */
+    --foreground: 222.2 84% 4.9%; /* #ded7f9 */
+
+    --card: 0 0% 100%; /* #ffffff */
+    --card-foreground: 222.2 84% 4.9%; /* #ded7f9 */
+
+    --popover: 0 0% 100%; /* #ffffff */
+    --popover-foreground: 222.2 84% 4.9%; /* #ded7f9 */
+
+    --primary: 222.2 47.4% 11.2%; /* #382d2d */
+    --primary-foreground: 210 40% 98%; /* #d6d6d6 */
+
+    --secondary: 210 40% 96.1%; /* #d2d2f5 */
+    --secondary-foreground: 222.2 47.4% 11.2%; /* #382d2d */
+
+    --muted: 210 40% 96.1%; /* #d2d2f5 */
+    --muted-foreground: 215.4 16.3% 46.9%; /* #363b7a */
+
+    --accent: 210 40% 96.1%; /* #d2d2f5 */
+    --accent-foreground: 222.2 47.4% 11.2%; /* #382d2d */
+
+    --destructive: 0 84.2% 60.2%; /* #ff3f3f */
+    --destructive-foreground: 210 40% 98%; /* #d6d6d6 */
+
+    --border: 214.3 31.8% 91.4%; /* #d9d9e8 */
+    --input: 214.3 31.8% 91.4%; /* #d9d9e8 */
+    --ring: 222.2 84% 4.9%; /* #ded7f9 */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%; /* #ded7f9 */
+    --foreground: 210 40% 98%; /* #d6d6d6 */
+
+    --card: 222.2 84% 4.9%; /* #ded7f9 */
+    --card-foreground: 210 40% 98%; /* #d6d6d6 */
+
+    --popover: 222.2 84% 4.9%; /* #ded7f9 */
+    --popover-foreground: 210 40% 98%; /* #d6d6d6 */
+
+    --primary: 210 40% 98%; /* #d6d6d6 */
+    --primary-foreground: 222.2 47.4% 11.2%; /* #382d2d */
+
+    --secondary: 217.2 32.6% 17.5%; /* #d0d0e0 */
+    --secondary-foreground: 210 40% 98%; /* #d6d6d6 */
+
+    --muted: 217.2 32.6% 17.5%; /* #d0d0e0 */
+    --muted-foreground: 215 20.2% 65.1%; /* #5850a8 */
+
+    --accent: 217.2 32.6% 17.5%; /* #d0d0e0 */
+    --accent-foreground: 210 40% 98%; /* #d6d6d6 */
+
+    --destructive: 0 62.8% 30.6%; /* #ff9f9f */
+    --destructive-foreground: 210 40% 98%; /* #d6d6d6 */
+
+    --border: 217.2 32.6% 17.5%; /* #d0d0e0 */
+    --input: 217.2 32.6% 17.5%; /* #d0d0e0 */
+    --ring: 212.7 26.8% 83.9%; /* #d7d1d1 */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
