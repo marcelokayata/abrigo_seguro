@@ -1,11 +1,12 @@
 "use client";
 
-import { AuthForm } from "@/components/forms/auth-form";
-import { Label } from "@/components/ui/label";
-import { SignInFormSchema } from "@/helpers/schemas/sign-in.schema";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
+
+import { AuthForm } from "@/components/forms/auth-form";
+import { Label } from "@/components/ui/label";
+import { SignInFormSchema } from "@/helpers/schemas/sign-in.schema";
 
 export function SignInContent(): React.ReactElement {
   const router = useRouter();
@@ -54,7 +55,7 @@ export function SignInContent(): React.ReactElement {
       <div>
         <div className="flex flex-col gap-2 text-center">
           <h1 className="text-4xl font-bold">Fazer login</h1>
-          <p className="text-muted-foreground mb-8">
+          <p className="mb-8 text-muted-foreground">
             Faça login e visualize as informações dos abrigos.
           </p>
         </div>

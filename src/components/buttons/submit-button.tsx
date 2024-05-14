@@ -1,7 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { Spinner } from "@phosphor-icons/react";
+
+import { cn } from "@/lib/utils";
+
 import { Button } from "../ui/button";
 
 interface SubmitButtonProps extends React.HTMLAttributes<HTMLButtonElement> {

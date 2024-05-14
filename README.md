@@ -11,6 +11,7 @@ pnpm dev
 # ou
 bun dev
 ```
+
 (Recomendo PNPM por ser mais rápido)
 
 Abra [http://localhost:3000](http://localhost:3000) com seu browser para ver o resultado.

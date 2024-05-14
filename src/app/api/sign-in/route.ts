@@ -1,29 +1,19 @@
-import { NextResponse } from "next/server";
-
-export async function POST(request: Request) {
-  const res = await request.json();
-
-  if (res.email === "" || res.password === "") {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(
-          NextResponse.json(
-            { message: "Preencha os campos corretamente." },
-            { status: 400 },
-          ),
-        );
-      }, 2000);
-    });
+async function handler(req: Request) {
+  if (req.method !== "POST") {
+    return Response.json({ message: "Método não permitido" });
   }
 
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(
-        NextResponse.json(
-          { message: `Seja bem-vindo, ${res.email}` },
-          { status: 200 },
-        ),
-      );
-    }, 2000);
-  });
+  const body = await req.json();
+
+  const { email, password } = body;
+
+  if (!email || !password) {
+    return Response.json({ message: "Preencha os campos corretamente." });
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  return Response.json({ message: `Seja bem-vindo, ${email}` });
 }
+
+export { handler as GET, handler as POST };
