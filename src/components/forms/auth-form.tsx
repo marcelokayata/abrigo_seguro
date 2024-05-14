@@ -1,9 +1,15 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
+import {
+  SignInFormSchema,
+  type tSignInFormValue,
+} from "@/helpers/schemas/sign-in.schema";
+import { cn } from "@/lib/utils";
+
+import { SubmitButton } from "../buttons/submit-button";
 import {
   Form,
   FormControl,
@@ -12,14 +18,7 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
-
 import { Input } from "../ui/input";
-
-import {
-  SignInFormSchema,
-  tSignInFormValue,
-} from "@/helpers/schemas/sign-in.schema";
-import { SubmitButton } from "../buttons/submit-button";
 
 interface AuthFormProps {
   className?: string;
